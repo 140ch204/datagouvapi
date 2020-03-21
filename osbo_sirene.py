@@ -15,7 +15,7 @@ from apigouv import *
 #print(myrequestrna.searchby_fulltext('judo boissy'))
 
 ## - Requete sirene ##
-myrequestsirene = SireneRequest('Bearer e39c63aa-d74e-34b7-8356-3557900b7c6b')
+myrequestsirene = SireneRequest(f'Bearer {API_KEY}')
 
 myrequestsirene.searchby_cp('91790')
 

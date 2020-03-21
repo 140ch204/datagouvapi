@@ -46,7 +46,7 @@ class SireneRequest:
         self.created = datetime.now()
         self.updated = datetime.now()
         self.urlapi = 'https://api.insee.fr/entreprises/sirene/V3/'
-        self.headers = {'Accept': 'application/json','Authorization' : 'Bearer e39c63aa-d74e-34b7-8356-3557900b7c6b'}
+        self.headers = {'Accept': 'application/json','Authorization' : f'Bearer {API_KEY}'}
 
     def __repr__(self):
          return " mis à jour le " + str(self.updated)
