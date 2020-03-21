@@ -9,6 +9,10 @@ https://github.com/140ch204/datagouvapi
 >
 >$ touch .env
 >
+>$ mkdir json
+>
+>$ mkdir gouvapidata/json
+>
 
  y ajouter  API_KEY = ''
 
