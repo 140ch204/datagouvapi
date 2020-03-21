@@ -1,4 +1,3 @@
 env/
 .env
-json/
-gouvapidata/json/
+results_*
