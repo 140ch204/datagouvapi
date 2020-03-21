@@ -1,6 +1,10 @@
 import requests
 import json
 from datetime import datetime
+import os
+
+API_KEY = os.environ['API_KEY']
+
 
 class RnaRequest:
   ### Make request on the RNA Api ### 

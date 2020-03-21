@@ -1,4 +1,8 @@
-from apigouv import *
+from obso_apigouv import *
+
+import os
+
+API_KEY = os.environ['API_KEY']
 
 ## https://entreprise.data.gouv.fr/api/sirene/v3/etablissements/?etat_administratif=A&code_postal=91790
 
