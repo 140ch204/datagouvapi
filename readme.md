@@ -1,6 +1,7 @@
 # Création d'une classe Python pour utiliser l'API datagouv
 
 Version Python V3
+https://github.com/140ch204/datagouvapi
 
 ## Pour démarrer 
 
