@@ -5,21 +5,23 @@ https://github.com/140ch204/datagouvapi
 
 ## Pour démarrer 
 
+>
 >$ virtualenv env -p python3
 >
 >$ touch .env
->
->$ mkdir json
->
->$ mkdir gouvapidata/json
 >
 
  y ajouter  API_KEY = ''
 
 >
+>$ mkdir json
+>
+>$ mkdir gouvapidata/json
+>
 >$ source env/bin/activate
 >
 >$ pip install -r requirements.txt 
+>
 >
 
 

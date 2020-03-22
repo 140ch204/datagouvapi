@@ -56,18 +56,20 @@ class GouvApiData:
 
         # Sauvegarde des résultats dans un JSON
         if self.nb_page_results == 1:
-            self.save_in_file()
+            self.save_in_file(self.response.json())
 
         # Récupération de tous les résultats nb_page = 
         if self.nb_page_results == 0:
+            
             nb_page = self.total_results // 100
-            for page in range(1,nb_page+1):
-                response = self.get_response(page,100)
-                time.sleep(1)
-                self.save_in_file()
+            response = []
+            for page in range(1,nb_page+2):
+                response += self.get_response(page,100).json()['etablissements']
+                print(len(response))
+                time.sleep(1.1)
+                self.save_in_file(response)
 
-
-        return response.json()
+        return ""
 
     def url_pagination(self,page=1,per_page=1 ):
         """ Retourne la partie pagination de l'URL de la requete
@@ -100,10 +102,10 @@ class GouvApiData:
         self.page = response_meta['page']
         self.total_pages = response_meta['total_pages']
 
-    def save_in_file(self):
+    def save_in_file(self,content):
         """Enregistre dans un JSON les résultats de la requete"""
         with open(self.resultfilename(), 'w') as outfile:
-            json.dump(self.response.json(), outfile)
+            json.dump(content, outfile)
             #json.dump(self.response.json()['etablissements'], outfile)
 
         return 'ok'

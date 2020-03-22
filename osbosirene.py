@@ -1,8 +1,13 @@
-from obso_apigouv import *
+from obsoapigouv import *
 
 import os
+import dotenv
 
-API_KEY = os.environ['API_KEY']
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
+
+API_KEY = os.getenv("API_KEY")
 
 ## https://entreprise.data.gouv.fr/api/sirene/v3/etablissements/?etat_administratif=A&code_postal=91790
 
@@ -21,10 +26,7 @@ API_KEY = os.environ['API_KEY']
 ## - Requete sirene ##
 myrequestsirene = SireneRequest(f'Bearer {API_KEY}')
 
-myrequestsirene.searchby_cp('91790')
-
-
-
+print(myrequestsirene.searchby_siren('353873953'))
 
 # Requete Infogreffe
 #myrequestrna = InfogreffeRequest()
